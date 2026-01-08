@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shërbimet - Spitali Modern</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <!-- Header dhe Navigimi (ngarkohet dinamikisht) -->
+    <div id="header-placeholder"></div>
+
+    <!-- Përmbajtja Kryesore -->
+    <main class="main-content">
+        <section class="page-header" style="background-image: url('../img/service.jpg');">
+            <div class="page-header-overlay"></div>
+            <div class="container">
+                <h1>Shërbimet Tona</h1>
+                <p>Ofrojmë një gamë të gjerë shërbimesh shëndetësore</p>
+            </div>
+        </section>
+
+        <section class="services-detail-section">
+            <div class="container">
+                <div class="service-detail-card">
+                    <div class="service-detail-icon">💊</div>
+                    <div class="service-detail-content">
+                        <h2>Kujdesi Primar</h2>
+                        <p>Ofrojmë kujdes primar të plotë për të gjithë familjen. Shërbimet tona përfshijnë:</p>
+                        <ul>
+                            <li>Konsulta mjekësore të rregullta</li>
+                            <li>Vaksinim për fëmijë dhe të rritur</li>
+                            <li>Kontroll shëndetësor vjetor</li>
+                            <li>Menaxhim i sëmundjeve kronike</li>
+                        </ul>
+                        <button class="service-button" onclick="window.location.href='../pages/appointment.html'">Rezervo Termin</button>
+                    </div>
+                </div>
+
+                <div class="service-detail-card">
+                    <div class="service-detail-icon">🏥</div>
+                    <div class="service-detail-content">
+                        <h2>Emergjenca 24/7</h2>
+                        <p>Shërbim emergjence i disponueshëm 24 orë në ditë, 7 ditë në javë:</p>
+                        <ul>
+                            <li>Trajtim i urgjencave mjekësore</li>
+                            <li>Ambulancë e disponueshme</li>
+                            <li>Doktorë në turn gjatë gjithë kohës</li>
+                            <li>Trajtim i shpejtë dhe efikas</li>
+                        </ul>
+                        <button class="service-button" onclick="showAlert('Për emergjenca, telefononi: 044-123-456 ose 112')">Telefono Emergjencë</button>
+                    </div>
+                </div>
+
+                <div class="service-detail-card">
+                    <div class="service-detail-icon">🔬</div>
+                    <div class="service-detail-content">
+                        <h2>Laborator dhe Diagnostikim</h2>
+                        <p>Laboratori ynë ofron teste dhe analiza të shpejta:</p>
+                        <ul>
+                            <li>Analiza të gjakut</li>
+                            <li>Teste urinore</li>
+                            <li>Radiografi (X-Ray)</li>
+                            <li>Ultrasonografi</li>
+                            <li>EKG (Elektrokardiogram)</li>
+                        </ul>
+                        <button class="service-button" onclick="showAlert('Rezultatet e testeve janë të disponueshme brenda 24 orëve')">Më Shumë Info</button>
+                    </div>
+                </div>
+
+                <div class="service-detail-card">
+                    <div class="service-detail-icon">👨‍⚕️</div>
+                    <div class="service-detail-content">
+                        <h2>Konsulta Specialiste</h2>
+                        <p>Ofrojmë konsulta me specialistë në fusha të ndryshme:</p>
+                        <ul>
+                            <li>Kardiologji</li>
+                            <li>Pediatri</li>
+                            <li>Gjinekologji</li>
+                            <li>Ortopedi</li>
+                            <li>Neurologji</li>
+                            <li>Dermatologji</li>
+                        </ul>
+                        <button class="service-button" onclick="window.location.href='../pages/appointment.html'">Rezervo me Specialist</button>
+                    </div>
+                </div>
+
+                <div class="service-detail-card">
+                    <div class="service-detail-icon">💉</div>
+                    <div class="service-detail-content">
+                        <h2>Vaksinim</h2>
+                        <p>Program i plotë vaksinimi për të gjitha grupmoshat:</p>
+                        <ul>
+                            <li>Vaksinim për fëmijë</li>
+                            <li>Vaksinim për të rritur</li>
+                            <li>Vaksinim kundër COVID-19</li>
+                            <li>Vaksinim për udhëtim</li>
+                        </ul>
+                        <button class="service-button" onclick="window.location.href='../pages/appointment.html'">Rezervo Vaksinim</button>
+                    </div>
+                </div>
+
+                <div class="service-detail-card">
+                    <div class="service-detail-icon">🏋️</div>
+                    <div class="service-detail-content">
+                        <h2>Programe Shëndetësore</h2>
+                        <p>Programe për mirëmbajtjen e shëndetit:</p>
+                        <ul>
+                            <li>Programe humbje peshe</li>
+                            <li>Programe për pushim nga duhani</li>
+                            <li>Konsulta nutricioni</li>
+                            <li>Programe për aktivitet fizik</li>
+                        </ul>
+                        <button class="service-button" onclick="showAlert('Programet tona shëndetësore janë të personalizuara për çdo individ')">Më Shumë Info</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer (ngarkohet dinamikisht) -->
+    <div id="footer-placeholder"></div>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>
+

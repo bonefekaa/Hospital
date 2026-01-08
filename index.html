@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spitali Modern - Faqja Kryesore</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header dhe Navigimi (ngarkohet dinamikisht) -->
+    <div id="header-placeholder"></div>
+
+    <!-- Hero Slider Section -->
+    <section class="hero-slider">
+        <div class="slider-container">
+            <!-- Slide 1 -->
+            <div class="slide active">
+                <div class="slide-image" style="background-image: url('./img/homepage.jpg');"></div>
+                <div class="slide-overlay"></div>
+                <div class="slide-content">
+                    <div class="slide-badge">🏥 Spitali Modern</div>
+                    <h2>Mirësevini në Spitalin Modern</h2>
+                    <p>Kujdesi më i mirë për shëndetin tuaj me teknologji moderne dhe ekip profesional</p>
+                    <div class="hero-buttons">
+                        <button class="cta-button" onclick="window.location.href='pages/appointment.html'">Rezervo Termin</button>
+                        <button class="cta-button secondary" onclick="scrollToSection('services')">Shërbimet Tona</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="slide">
+                <div class="slide-image" style="background-image: url('./img/hero-2.jpg');"></div>
+                <div class="slide-overlay"></div>
+                <div class="slide-content">
+                    <div class="slide-badge">🚨 Emergjencë</div>
+                    <h2>Emergjenca 24/7</h2>
+                    <p>Jemi këtu për ju gjatë gjithë kohës. Shërbim emergjence i disponueshëm 24 orë në ditë</p>
+                    <div class="hero-buttons">
+                        <button class="cta-button" onclick="showAlert('Për emergjenca, telefononi: 044-123-456 ose 112')">Telefono Tani</button>
+                        <button class="cta-button secondary" onclick="scrollToSection('services')">Më Shumë Info</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="slide">
+                <div class="slide-image" style="background-image: url('./img/service.jpg');"></div>
+                <div class="slide-overlay"></div>
+                <div class="slide-content">
+                    <div class="slide-badge">🔬 Teknologji</div>
+                    <h2>Teknologji Moderne</h2>
+                    <p>Diagnostikim i saktë dhe i shpejtë me teknologji të fundit dhe pajisje të avancuara</p>
+                    <div class="hero-buttons">
+                        <button class="cta-button" onclick="window.location.href='pages/services.html'">Shiko Shërbimet</button>
+                        <button class="cta-button secondary" onclick="window.location.href='pages/about.html'">Rreth Nesh</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 4 -->
+            <div class="slide">
+                <div class="slide-image" style="background-image: url('./img/hero-3.jpg');"></div>
+                <div class="slide-overlay"></div>
+                <div class="slide-content">
+                    <div class="slide-badge">👨‍⚕️ Ekipi</div>
+                    <h2>Ekip Profesional</h2>
+                    <p>Mbi 50 doktorë ekspertë dhe staf profesional për kujdesin tuaj shëndetësor</p>
+                    <div class="hero-buttons">
+                        <button class="cta-button" onclick="window.location.href='pages/appointment.html'">Rezervo me Doktor</button>
+                        <button class="cta-button secondary" onclick="window.location.href='pages/about.html'">Njohu Ekipin</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Indikatorët (dots) -->
+        <div class="slider-dots">
+            <span class="dot active" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+        </div>
+    </section>
+
+    <!-- Përmbajtja Kryesore -->
+    <main class="main-content">
+        <!-- Seksioni i Shërbimeve -->
+        <section id="services" class="services-section">
+            <div class="container">
+                <h2 class="section-title">Shërbimet Tona</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">💊</div>
+                        <h3>Kujdesi Primar</h3>
+                        <p>Kujdesi më i mirë për çdo anëtar të familjes</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🏥</div>
+                        <h3>Emergjenca 24/7</h3>
+                        <p>Shërbim emergjence gjatë gjithë ditës dhe natës</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🔬</div>
+                        <h3>Laborator</h3>
+                        <p>Teste dhe analiza të shpejta dhe të sakta</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">👨‍⚕️</div>
+                        <h3>Konsulta Specialiste</h3>
+                        <p>Doktorë ekspertë në çdo fushë</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seksioni i Statistikave -->
+        <section class="stats-section">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <h3 class="stat-number" data-target="5000">0</h3>
+                        <p>Pacientë të Kënaqur</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3 class="stat-number" data-target="50">0</h3>
+                        <p>Doktorë Ekspertë</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3 class="stat-number" data-target="15">0</h3>
+                        <p>Vite Përvojë</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3 class="stat-number" data-target="24">0</h3>
+                        <p>Orë në Ditë</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seksioni i Lajmeve -->
+        <section class="news-section">
+            <div class="container">
+                <h2 class="section-title">Lajme dhe Informacione</h2>
+                <div class="news-grid">
+                    <article class="news-card">
+                        <div class="news-date">15 Janar 2024</div>
+                        <h3>Program i Ri Vaksinimi</h3>
+                        <p>Hapim programin e ri të vaksinimit për të gjithë grupmoshat. Rezervoni termin tuaj tani!</p>
+                        <button class="read-more" onclick="showAlert('Faleminderit për interesimin! Kontaktoni në numrin 044-123-456')">Lexo Më Shumë</button>
+                    </article>
+                    <article class="news-card">
+                        <div class="news-date">10 Janar 2024</div>
+                        <h3>Teknologji e Re</h3>
+                        <p>Kemi futur teknologji të reja për diagnostikim më të saktë dhe më të shpejtë.</p>
+                        <button class="read-more" onclick="showAlert('Teknologjia e re na lejon diagnostikim 50% më të shpejtë!')">Lexo Më Shumë</button>
+                    </article>
+                    <article class="news-card">
+                        <div class="news-date">5 Janar 2024</div>
+                        <h3>Doktor i Ri</h3>
+                        <p>Dr. Arben Krasniqi u bashkua me ekipin tonë si specialist në kardiologji.</p>
+                        <button class="read-more" onclick="showAlert('Dr. Krasniqi ka mbi 10 vjet përvojë në kardiologji!')">Lexo Më Shumë</button>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer (ngarkohet dinamikisht) -->
+    <div id="footer-placeholder"></div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
+

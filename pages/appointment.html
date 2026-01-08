@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rezervo Termin - Spitali Modern</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <!-- Header dhe Navigimi (ngarkohet dinamikisht) -->
+    <div id="header-placeholder"></div>
+
+    <!-- Përmbajtja Kryesore -->
+    <main class="main-content">
+        <section class="page-header" style="background-image: url('../img/appointmentt.jpg');">
+            <div class="page-header-overlay"></div>
+            <div class="container">
+                <h1>Rezervo Termin me Doktor</h1>
+                <p>Zgjidhni doktorin dhe rezervoni termin tuaj</p>
+            </div>
+        </section>
+
+        <section class="appointment-section">
+            <div class="container">
+                <div class="appointment-wrapper">
+                    <!-- Formulari i Rezervimit -->
+                    <div class="appointment-form-wrapper">
+                        <h2>Formulari i Rezervimit</h2>
+                        <form class="appointment-form" id="appointmentForm" onsubmit="handleAppointmentSubmit(event)">
+                            <!-- Informacione Personale -->
+                            <div class="form-section">
+                                <h3>📋 Informacione Personale</h3>
+                                
+                                <div class="form-group">
+                                    <label for="patientName">Emri dhe Mbiemri *</label>
+                                    <input type="text" id="patientName" name="patientName" required placeholder="Shkruani emrin dhe mbiemrin">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="patientEmail">Email *</label>
+                                    <input type="email" id="patientEmail" name="patientEmail" required placeholder="example@email.com">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="patientPhone">Numri i Telefonit *</label>
+                                    <input type="tel" id="patientPhone" name="patientPhone" required placeholder="044-123-456">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="patientAge">Mosha *</label>
+                                    <input type="number" id="patientAge" name="patientAge" required min="1" max="120" placeholder="Shkruani moshën">
+                                </div>
+                            </div>
+
+                            <!-- Zgjedhja e Doktorit -->
+                            <div class="form-section">
+                                <h3>👨‍⚕️ Zgjedhni Doktorin</h3>
+                                
+                                <div class="form-group">
+                                    <label for="doctorSelect">Doktori *</label>
+                                    <select id="doctorSelect" name="doctorSelect" required onchange="updateDoctorInfo()">
+                                        <option value="">-- Zgjidhni Doktorin --</option>
+                                        <option value="dr-agron">Dr. Agron Berisha - Kardiolog</option>
+                                        <option value="dr-lirije">Dr. Lirije Gashi - Pediatër</option>
+                                        <option value="dr-arben">Dr. Arben Krasniqi - Kardiolog</option>
+                                        <option value="dr-valbona">Dr. Valbona Morina - Gjinekologe</option>
+                                        <option value="dr-besnik">Dr. Besnik Rexhepi - Ortoped</option>
+                                        <option value="dr-ardita">Dr. Ardita Shala - Neurologe</option>
+                                    </select>
+                                </div>
+
+                                <!-- Informacione për Doktorin e Zgjedhur -->
+                                <div id="doctorInfo" class="doctor-info-box" style="display: none;">
+                                    <h4>Informacione për Doktorin</h4>
+                                    <p id="doctorDetails"></p>
+                                    <p id="doctorSpecialty"></p>
+                                    <p id="doctorExperience"></p>
+                                </div>
+                            </div>
+
+                            <!-- Data dhe Ora -->
+                            <div class="form-section">
+                                <h3>📅 Data dhe Ora</h3>
+                                
+                                <div class="form-group">
+                                    <label for="appointmentDate">Data e Terminit *</label>
+                                    <input type="date" id="appointmentDate" name="appointmentDate" required min="" onchange="updateAvailableHours()">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="appointmentTime">Ora e Terminit *</label>
+                                    <select id="appointmentTime" name="appointmentTime" required>
+                                        <option value="">-- Zgjidhni Ora --</option>
+                                        <option value="09:00">09:00</option>
+                                        <option value="10:00">10:00</option>
+                                        <option value="11:00">11:00</option>
+                                        <option value="12:00">12:00</option>
+                                        <option value="14:00">14:00</option>
+                                        <option value="15:00">15:00</option>
+                                        <option value="16:00">16:00</option>
+                                        <option value="17:00">17:00</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Arsyeja e Vizitës -->
+                            <div class="form-section">
+                                <h3>💬 Arsyeja e Vizitës</h3>
+                                
+                                <div class="form-group">
+                                    <label for="visitReason">Përshkruani arsyejen e vizitës *</label>
+                                    <textarea id="visitReason" name="visitReason" rows="4" required placeholder="Shkruani arsyejen për vizitën (symptoma, problemet, etj.)"></textarea>
+                                </div>
+                            </div>
+
+                            <!-- Butoni i Dërgimit -->
+                            <button type="submit" class="submit-button">Rezervo Terminin</button>
+                        </form>
+                    </div>
+
+                    <!-- Informacione Shtesë -->
+                    <div class="appointment-info">
+                        <h2>📌 Informacione të Rëndësishme</h2>
+                        
+                        <div class="info-box">
+                            <h3>⏰ Orari i Rezervimeve</h3>
+                            <p><strong>E Hënë - E Premte:</strong> 08:00 - 18:00</p>
+                            <p><strong>E Shtunë:</strong> 09:00 - 14:00</p>
+                            <p><strong>E Dielë:</strong> Nuk ka rezervime</p>
+                        </div>
+
+                        <div class="info-box">
+                            <h3>📞 Kontakti</h3>
+                            <p>Nëse keni pyetje ose probleme me rezervimin, na kontaktoni:</p>
+                            <p><strong>Telefoni:</strong> 044-123-456</p>
+                            <p><strong>Email:</strong> rezervime@spitalimodern.com</p>
+                        </div>
+
+                        <div class="info-box">
+                            <h3>✅ Çfarë të Prisni</h3>
+                            <ul>
+                                <li>Konfirmim i menjëhershëm përmes email-it</li>
+                                <li>Kujtesë 24 orë para terminave</li>
+                                <li>Mundësi anulimi deri në 24 orë para terminave</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-box">
+                            <h3>⚠️ Shënime</h3>
+                            <ul>
+                                <li>Ju lutemi arrini 10 minuta para terminave</li>
+                                <li>Sillni dokumentat e nevojshëm (ID, karta sigurimi, etj.)</li>
+                                <li>Nëse nuk mund të vini, ju lutemi anuloni terminin</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer (ngarkohet dinamikisht) -->
+    <div id="footer-placeholder"></div>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>
+
